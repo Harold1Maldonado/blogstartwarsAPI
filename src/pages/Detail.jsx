@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const Detail = () => {
   const { type, uid } = useParams();
-  const { dispatch } = useGlobalReducer();
   const [entity, setEntity] = useState(null);
 
   useEffect(() => {
@@ -18,23 +16,29 @@ export const Detail = () => {
 
   const imgSrc = `/src/assets/img/${type}/${uid}.jpg`;
 
-  if (!entity) return <p>Cargando...</p>;
+  if (!entity) return <p className="text-center mt-4">Cargando...</p>;
 
   return (
-    <div className="detail-container">
-      <div className="img-column">
-        <img src={imgSrc} className="detail-image" alt={entity.name} />
+    <div className="row align-items-start g-4 detail-view">
+      <div className="col-md-5 text-center">
+        <img src={imgSrc} className="img-fluid rounded shadow" alt={entity.name} />
       </div>
-      <div className="info-column">
-        <h1 className="entity-name">{entity.name}</h1>
 
-        <ul className="detail-list">
-          {Object.entries(entity).map(([key, value]) => (
-            <li key={key}>
-              <strong>{key.replace("_", " ")}:</strong> {value}
-            </li>
-          ))}
-        </ul>
+      <div className="col-md-7">
+        <h1 className="mb-3 text-warning fw-bold">{entity.name}</h1>
+
+        <table className="table table-dark table-striped table-bordered align-middle">
+          <tbody>
+            {Object.entries(entity).map(([key, value]) => (
+              <tr key={key}>
+                <th className="text-capitalize w-25">
+                  {key.replaceAll("_", " ")}
+                </th>
+                <td>{value}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
 
         <Link to="/" className="btn btn-outline-warning mt-3">
           ← Volver
