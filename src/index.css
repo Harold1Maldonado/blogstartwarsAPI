@@ -20,7 +20,7 @@ h2 {
   text-transform: uppercase;
 }
 
-/* === PAGE TITLE === */
+
 .page-title {
   color: #ffe81f;
   text-align: center;
@@ -28,7 +28,7 @@ h2 {
   font-size: 2.6rem;
 }
 
-/* === NAVBAR === */
+
 .navbar {
   background: #000 !important;
   border-bottom: 1px solid #00bfff55;
@@ -53,7 +53,6 @@ h2 {
   text-shadow: 0 0 8px #00bfff;
 }
 
-/* === SEARCH BAR === */
 .search-wrap {
   width: 180px;
 }
@@ -72,7 +71,7 @@ h2 {
   box-shadow: 0 0 6px #00bfff88;
 }
 
-/* === FAVORITES DROPDOWN === */
+
 .dropdown-menu {
   background: #1a1f24;
   border: 1px solid #333;
@@ -88,7 +87,7 @@ h2 {
   color: white;
 }
 
-/* === CARD LIST SCROLL === */
+
 .card-list {
   display: flex;
   gap: 22px;
@@ -113,7 +112,7 @@ h2 {
   border: 1px solid #222;
   border-radius: 12px;
   width: 280px;
-  flex: 0 0 280px; /* 👈 evita que se encojan, hace scroll */
+  flex: 0 0 280px; 
   height: 380px;
   display: flex;
   flex-direction: column;
@@ -133,7 +132,7 @@ h2 {
   object-fit: cover;
 }
 
-/* === CARD BODY === */
+
 .card-body-fixed {
   display: flex;
   flex-direction: column;
@@ -148,7 +147,7 @@ h2 {
   color: #f0f0f0;
 }
 
-/* === CARD BUTTONS === */
+
 .card-actions-fixed {
   display: flex;
   justify-content: space-between;
@@ -187,7 +186,7 @@ h2 {
   box-shadow: 0 0 14px #ffe81f;
 }
 
-/* === RESPONSIVE === */
+
 @media (max-width: 768px) {
   .page-title {
     font-size: 2rem;
@@ -205,7 +204,7 @@ h2 {
   }
 }
 
-/* === FOOTER STYLES === */
+
 .footer {
   background: #0d0f12;
   border-top: 1px solid #1f252c;
@@ -227,7 +226,7 @@ h2 {
 }
 
 .img-box {
-  background: #0d0f12; /* mismo tono del card */
+  background: #0d0f12; 
   display: flex;
   align-items: center;
   justify-content: center;
