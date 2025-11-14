@@ -21,7 +21,16 @@ export const Detail = () => {
   return (
     <div className="row align-items-start g-4 detail-view">
       <div className="col-md-5 text-center">
-        <img src={imgSrc} className="img-fluid rounded shadow" alt={entity.name} />
+        <img
+          src={imgSrc}
+          className="img-fluid rounded shadow"
+          alt={entity.name}
+          onError={(e) => {
+            if (!e.target.src.includes("placeholder.jpg")) {
+              e.target.src = "/src/assets/img/placeholder.jpg";
+            }
+          }}
+        />
       </div>
 
       <div className="col-md-7">
